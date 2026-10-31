@@ -1,0 +1,18 @@
+# Height of the Binary Tree
+
+''' Structure of Binary Tree Node
+class Node:
+    def _init_(self, val):
+        self.data = val
+        self.left = None
+        self.right = None
+'''
+
+class Solution:
+    def height(self, root):
+        # code here
+        if root is None:
+            return -1
+        left = self.height(root.left)
+        right = self.height(root.right)
+        return 1 + max(left, right)
